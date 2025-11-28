@@ -1,0 +1,22 @@
+# Docker Images to Transfer
+# Format: namespace/image:tag
+# Please remove registry name ! e.g. docker.io, ghcr.io etc. only image:tag or trailing namespaces/image:tag is needed
+
+# Base images
+library/nginx:latest
+library/redis:7.0
+library/postgres:15-alpine
+
+# Application images
+myapp/backend:v1.2.3
+myapp/frontend:v1.2.3
+
+# Monitoring stack
+prometheus/prometheus:v2.45.0
+grafana/grafana:10.0.0
+
+# Empty lines and whitespace are ignored
+
+# Development tools
+hashicorp/terraform:1.5.0
+alpine:3.18
