@@ -106,7 +106,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     DEST_IMAGE="docker://${DEST_REGISTRY}/${image}"
     
     # Transfer image using skopeo
-    if skopeo copy --multi-arch all "$SOURCE_IMAGE" "$DEST_IMAGE"; then
+    if skopeo copy --insecure-policy --format=oci "$SOURCE_IMAGE" "$DEST_IMAGE"; then
         echo -e "${GREEN}✓ Successfully transferred: $image${NC}"
         SUCCESS=$((SUCCESS + 1))
     else
